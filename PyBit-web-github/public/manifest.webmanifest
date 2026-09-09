@@ -1,0 +1,5 @@
+{
+  "name": "PyBit 私人收益账本", "short_name": "PyBit", "start_url": "/", "display": "standalone",
+  "background_color": "#101216", "theme_color": "#101216", "lang": "zh-CN",
+  "icons": []
+}
