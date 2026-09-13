@@ -1,0 +1,10 @@
+-- Run in a disposable staging Supabase project after applying migrations and binding czh/waka/member.
+-- In three separate authenticated SQL sessions, verify the following expectations:
+-- member: select * from capital_entries;              -- only own rows
+-- member: select * from round_allocations;             -- only own rows
+-- waka:   select public.app_review_withdrawal('<id>', true, null); -- must fail CZH_REQUIRED
+-- czh:    select public.app_review_withdrawal('<id>', true, null); -- succeeds once only
+-- czh:    select public.app_review_withdrawal('<id>', true, null); -- fails WITHDRAWAL_ALREADY_REVIEWED
+-- parallel czh/waka sessions: select public.app_create_round(current_date, 100000, gen_random_uuid());
+-- Both successful calls must have distinct daily sequences. Query sum(stake_cents) from round_allocations by round_id;
+-- the result must equal each round's total_stake_cents.

@@ -1,0 +1,17 @@
+:root {
+  color-scheme: dark;
+  --v2-bg: #050505;
+  --v2-panel: rgba(18, 18, 18, .68);
+  --v2-raised: #171717;
+  --v2-line: rgba(255, 255, 255, .11);
+  --v2-line-strong: #3b3b3b;
+  --v2-text: #f5f5f5;
+  --v2-muted: #8f8f8f;
+  --v2-accent: #d7ff00;
+  --v2-good: #00c982;
+  --v2-bad: #ed2f72;
+  --v2-display: "Arial Black", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --v2-numeric: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --v2-card-radius: 18px;
+  --v2-control-radius: 12px;
+}

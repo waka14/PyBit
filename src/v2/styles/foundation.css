@@ -1,0 +1,12 @@
+html { background: #050505; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; background: #050505; }
+button, input, select { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; }
+button, input, select { -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.v2-shell, .v2-locked { position: relative; isolation: isolate; width: min(100%, 1120px); min-height: 100dvh; margin: auto; overflow: hidden; background: rgba(8, 8, 8, .9); border-inline: 1px solid #202020; color: var(--v2-text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+.v2-shell { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+.v2-shell::before { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: radial-gradient(circle at 82% 7%, rgba(215,255,0,.075), transparent 24%), radial-gradient(circle at 11% 58%, rgba(255,255,255,.045), transparent 30%); }
+.v2-shell > header, .v2-shell > .page-transition, .v2-shell > .bottom-nav, .v2-shell > .v2-toast, .v2-shell > .v2-saving { position: relative; z-index: 1; }
+.v2-shell :focus-visible, .v2-locked :focus-visible { outline: 2px solid var(--v2-accent); outline-offset: 3px; }
+.v2-shell ::selection { color: #050505; background: var(--v2-accent); }

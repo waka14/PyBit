@@ -1,0 +1,26 @@
+/* Decorative background, page transitions and quote-board motion. */
+.pixel-storm { position: fixed; z-index: 0; inset: 0 auto auto 50%; width: min(100%, 1120px); height: 100dvh; transform: translateX(-50%); overflow: hidden; pointer-events: none; perspective: 520px; opacity: .52; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 86%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 86%, transparent); }
+.storm-pixel { position: absolute; left: var(--pixel-left); bottom: -8%; width: var(--pixel-size); height: var(--pixel-size); background: rgba(245,245,245,.62); box-shadow: 8px 0 0 rgba(245,245,245,.16), 0 8px 0 rgba(215,255,0,.2); animation: pixel-storm-rise var(--pixel-duration) linear infinite; animation-delay: var(--pixel-delay); will-change: transform, opacity; }
+.storm-pixel:nth-of-type(4n) { background: rgba(215,255,0,.72); }
+.storm-pixel:nth-of-type(5n) { width: 8px; height: 1px; }
+.storm-glyph { position: absolute; left: var(--pixel-left); bottom: -12%; width: 20px; height: 20px; color: rgba(245,245,245,.34); animation: pixel-glyph-rise var(--pixel-duration) linear infinite; animation-delay: var(--pixel-delay); will-change: transform, opacity; }
+.storm-glyph svg, .storm-glyph img { display: block; width: 100%; height: 100%; }
+.storm-glyph-b { width: 40px; height: 40px; opacity: .64; }
+.storm-glyph-eth, .storm-glyph-zec { color: rgba(245,245,245,.43); }
+@keyframes pixel-storm-rise { 0% { opacity: 0; transform: translate3d(0, 12vh, calc(0px - var(--pixel-depth))) rotateX(68deg) rotateZ(0); } 12% { opacity: .34; } 58% { opacity: .72; } 100% { opacity: 0; transform: translate3d(var(--pixel-drift), -112vh, var(--pixel-depth)) rotateX(-48deg) rotateZ(220deg); } }
+@keyframes pixel-glyph-rise { 0% { opacity: 0; transform: translate3d(0, 16vh, calc(0px - var(--pixel-depth))) rotateY(-42deg) scale(.7); } 16% { opacity: .22; } 55% { opacity: .46; } 100% { opacity: 0; transform: translate3d(var(--pixel-drift), -116vh, var(--pixel-depth)) rotateY(58deg) scale(1.08); } }
+.page-transition { position: relative; }
+.page-transition-content { animation: page-enter 420ms cubic-bezier(.16, 1, .3, 1) both; }
+.transition-particles { position: absolute; z-index: 3; inset: 0 0 auto; height: 110px; overflow: hidden; pointer-events: none; }
+.transition-particles i { --x-shift: calc((var(--particle) - 10) * 3px); position: absolute; left: calc(5% + var(--particle) * 4.6%); top: 28px; width: 4px; height: 4px; background: var(--action); opacity: 0; box-shadow: 7px 7px 0 rgba(245,245,245,.34); animation: particle-burst 680ms cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(var(--particle) * 11ms); }
+.transition-particles i:nth-child(2n) { top: 46px; }
+.transition-particles i:nth-child(3n) { top: 18px; }
+.transition-particles i:nth-child(3n) { width: 7px; height: 2px; background: var(--bright); }
+.transition-particles i:nth-child(4n) { border-radius: 50%; }
+@keyframes page-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes particle-burst { 0% { opacity: 0; transform: translate3d(0, 18px, -30px) rotate(0) scale(.35); } 18% { opacity: .95; } 58% { opacity: .7; } 100% { opacity: 0; transform: translate3d(var(--x-shift), -44px, 40px) rotate(135deg) scale(1.25); } }
+.quote-flip { display: inline-block; min-width: 0; white-space: nowrap; perspective: 380px; }
+.quote-flip-value { display: inline-block; transform-origin: 50% 55%; animation: quote-tick 78ms cubic-bezier(.2,.8,.2,1) both; }
+@keyframes quote-tick { from { opacity: .42; transform: rotateX(-72deg) translateY(2px); filter: blur(.6px); } to { opacity: 1; transform: rotateX(0) translateY(0); filter: blur(0); } }
+.quote-flip-live .quote-flip-value { animation: quote-board-live 1.5s cubic-bezier(.2,.8,.2,1) infinite; }
+@keyframes quote-board-live { 0%, 82%, 100% { opacity: 1; transform: rotateX(0); filter: blur(0); } 88% { opacity: .38; transform: rotateX(-68deg); filter: blur(.55px); } 94% { opacity: .82; transform: rotateX(16deg); filter: blur(.2px); } }

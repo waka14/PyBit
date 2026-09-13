@@ -1,0 +1,10 @@
+@media (max-width: 780px) {
+  .wrap, .shell, .frame, .hero, .work, .work > section, .intro, .body, .panel, .summary, .hand, .below, .ledger, .card { min-width: 0; }
+  .top > * { min-width: 0; }
+  .chart, .trend { min-width: 0; overflow: hidden; }
+  .user { margin-left: auto; max-width: 220px; text-align: right; }
+  .top-actions { max-width: 190px; text-align: right; overflow-wrap: anywhere; }
+  .stat strong, .card strong, .row strong { overflow-wrap: anywhere; }
+  .card { overflow: hidden; }
+  .card.main strong { font-size: 34px; letter-spacing: -0.1em; }
+}

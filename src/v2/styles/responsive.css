@@ -1,0 +1,34 @@
+@media (max-width: 700px) {
+  .v2-shell, .v2-locked { border-inline: 0; }
+  .v2-header { padding-inline: 16px; }
+  .v2-page { padding: 20px 16px 28px; }
+  .v2-page-title { min-height: 0; grid-template-columns: minmax(0,1fr); align-items: start; gap: 18px; padding: 22px 18px; }
+  .v2-stat { text-align: left; }
+  .v2-panel { padding: 16px; }
+  .v2-asset-hero { padding: 22px 18px; }
+  .v2-header-actions { flex-wrap: wrap; justify-content: flex-end; }
+  .v2-chart { min-height: 190px; }
+  .v2-form { grid-template-columns: 1fr; }
+  .v2-form-actions { grid-column: 1; }
+  input, select { font-size: 16px; }
+}
+@media (max-width: 390px) {
+  .v2-header { padding-inline: 12px; }
+  .v2-header small { margin-left: 0; }
+  .v2-brand { font-size: 16px; }
+  .v2-brand .b-mark { width: 24px; height: 24px; }
+  .v2-page { padding-inline: 12px; }
+  .v2-panel { padding: 14px; }
+  .v2-page-title { padding: 20px 16px; }
+  .v2-page h1, .v2-asset-hero h1 { font-size: clamp(32px, 10.6vw, 44px); }
+  .v2-segment button { padding-inline: 8px; font-size: 11px; }
+  .v2-stat-grid span { padding: 11px 8px; }
+  .v2-stat-grid b { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .pixel-storm, .transition-particles { display: none; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .v2-panel, .v2-page-title, .v2-header, .bottom-nav { background: #141414; }
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env.local
+.env.production.local
+.env.production
+*.zip
+*.tsbuildinfo
+.scratch/pybit-v2/.Rhistory
+.scratch/pybit-v2/screenshots/
